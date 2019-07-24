@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import styled from 'styled-components';
 
@@ -30,10 +31,15 @@ const Paragraph = styled.p`
     font-size: 1rem;
 `;
 
+type Props = {
+  name: string,
+  description: string,
+}
+
 const App = ({
   name,
   description,
-}) => (
+}: Props) => (
   <Container>
     <Wrapper>
       <Title>
