@@ -1,2 +1,2 @@
 # react-boilerplate
-Boilerplate for React with Webpack
+Minimal boilerplate for React with Webpack
