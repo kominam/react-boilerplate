@@ -14,6 +14,7 @@ export default {
     extensions: ['*', '.js', '.scss', '.css', '.jsx', '.tsx'],
     alias: {
       '@components': paths.componentFolder,
+      '@pages': paths.pageFolder,
     }
   },
   plugins: [

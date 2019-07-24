@@ -1,4 +1,4 @@
-import CleanWebpackPlugin from 'clean-webpack-plugin';
+import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
 import paths from './paths';
@@ -11,9 +11,7 @@ export default {
     chunkFilename: '[name].[chunkhash].js'
   },
   plugins: [
-    new CleanWebpackPlugin([paths.outputPath.split('/').pop()], {
-      root: paths.root
-    }),
+    new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: `${paths.cssFolder}/[name].[hash].css`,
       chunkFilename: '[id].[hash].css'
