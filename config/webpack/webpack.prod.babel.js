@@ -3,7 +3,7 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
 import paths from './paths';
 
-module.exports = {
+export default {
   mode: 'production',
   output: {
     filename: `${paths.jsFolder}/[name].[hash].js`,

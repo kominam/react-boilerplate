@@ -1,6 +1,6 @@
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
-module.exports = [
+const loaders = [
   {
     test: /\.js(x)?$/,
     exclude: /node_modules/,
@@ -58,3 +58,5 @@ module.exports = [
     ]
   }
 ];
+
+export default loaders;

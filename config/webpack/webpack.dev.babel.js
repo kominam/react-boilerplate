@@ -1,10 +1,9 @@
 import webpack from 'webpack';
 import Jarvis from 'webpack-jarvis';
-import path from 'path';
 
 import paths from './paths';
 
-module.exports = {
+export default {
   mode: 'development',
   output: {
     filename: '[name].js',
@@ -38,9 +37,6 @@ module.exports = {
   ],
   resolve: {
     extensions: ['.json', '.js', '.jsx', '.tsx'],
-    alias: {
-      'HELIGRAM-CONFIG': path.resolve(__dirname, '../../src/config')
-    }
   },
   devtool: 'eval-source-map'
 };
