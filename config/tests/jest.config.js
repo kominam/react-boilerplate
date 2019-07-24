@@ -7,6 +7,7 @@ module.exports = {
     '!**/node_modules/**',
     '!**/vendor/**'
   ],
+  rootDir: '../../',
   coverageDirectory: '<rootDir>/coverage',
   globals: {
     __DEV__: true
@@ -16,5 +17,7 @@ module.exports = {
     '^.+\\.(js|jsx)$': 'babel-jest'
   },
   verbose: true,
-  setupTestFrameworkScriptFile: './rtl.setup.js'
+  setupFilesAfterEnv: [
+    '<rootDir>/config/tests/enzyme.setup.js'
+  ]
 };

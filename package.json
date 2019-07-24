@@ -65,7 +65,7 @@
     "lint": "eslint ./src/**/**.js",
     "lint:fix": "eslint ./src/**/**.js --fix",
     "format": "prettier --write '{src, config, tests}/**/**.js'",
-    "test": "jest --watch",
+    "test": "jest --config=config/tests/jest.config.js",
     "test:cover": "jest --coverage",
     "cypress:open": "cypress open"
   },

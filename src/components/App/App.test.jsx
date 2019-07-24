@@ -1,12 +1,12 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 
 import App from './App';
 
 describe('<App />', () => {
-  const wrap = shallow(<App />);
-
   it('renders', () => {
-    expect(wrap.find(App).exists()).toBe(true);
+    const wrapper = mount(<App name="AppName" description="AppDescription" />);
+  
+    expect(wrapper.props().name).toBe('AppName');
   });
 });
