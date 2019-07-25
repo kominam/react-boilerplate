@@ -60,7 +60,7 @@ This boilerplate features all the latest tools and practices in the industry.
 - [ ] **Localization**: Support localization;
 - [ ] **Hot Module Replacement**: Better HMR support;
 - [ ] **PWA**: Turn into a PWA boilerplate;
-- [ ] **SEO**: SEO-ready;
+- [x] **SEO**: SEO-ready;
 
 ## License
 
