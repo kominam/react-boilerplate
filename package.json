@@ -67,7 +67,8 @@
     "format": "prettier --write '{src, config, tests}/**/**.js'",
     "test": "jest --config=config/tests/jest.config.js",
     "test:cover": "jest --coverage",
-    "cypress:open": "cypress open"
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
   },
   "repository": {
     "type": "git",

@@ -1,23 +1,16 @@
-import React, { Fragment, Suspense } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
-import Home from '@pages/Home';
+import App from './containers/App';
 
 import store from './store';
 
+const MOUNT_NODE = document.getElementById('root');
+
 ReactDOM.render(
-  <BrowserRouter>
-    <Fragment>
-      <Suspense fallback={<p>Loading ...</p> }>
-        <Provider store={store}>
-          <Switch>
-            <Route exact path='/' component={Home}/>
-          </Switch>
-        </Provider>
-      </Suspense>
-    </Fragment>
-  </BrowserRouter>,
-  document.getElementById('root')
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  MOUNT_NODE
 );
