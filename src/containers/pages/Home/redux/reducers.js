@@ -1,5 +1,5 @@
 import Immutable from 'seamless-immutable';
-import * as actions from '../actions';
+import * as constant from './constant';
 
 const initialState = {};
 
@@ -10,7 +10,7 @@ export default function (state = initialState, action) {
   } = action;
 
   switch (type) {
-  case actions.ACTION_NAME: {
+  case constant.ACTION_NAME: {
     return Immutable.merge(state, {
       ...payload
     });
