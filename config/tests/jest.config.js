@@ -8,6 +8,7 @@ module.exports = {
     '!**/vendor/**'
   ],
   rootDir: '../../',
+  roots: ['<rootDir>/src/'],
   coverageDirectory: '<rootDir>/coverage',
   globals: {
     __DEV__: true

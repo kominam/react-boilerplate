@@ -7,6 +7,7 @@ export default {
   templatePath: path.resolve(__dirname, '../', '../', 'src/index.html'),
   componentFolder: path.resolve(__dirname, '../', '../', 'src/components'),
   pageFolder: path.resolve(__dirname, '../', '../', 'src/containers/pages'),
+  utilFolder: path.resolve(__dirname, '../', '../', 'src/utils'),
   imagesFolder: 'images',
   fontsFolder: 'fonts',
   cssFolder: 'css',

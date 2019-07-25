@@ -1,3 +1,6 @@
-import Home from './Home';
+import React from 'react';
+import loadable from '@utils/loadable';
 
-export default Home;
+export default loadable(() => import('./Home'), {
+  fallbackComponent: <p>Loading </p>,
+});

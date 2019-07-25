@@ -55,7 +55,7 @@ This boilerplate features all the latest tools and practices in the industry.
 
 ## Next features:
 
-- [ ] **Lazy load**: Lazy load component;
+- [x] **Lazy load**: Lazy load component;
 - [ ] **Redux Saga**: Support Saga in Redux;
 - [ ] **Localization**: Support localization;
 - [ ] **Hot Module Replacement**: Better HMR support;
