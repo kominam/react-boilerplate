@@ -25,6 +25,7 @@ This boilerplate contains all you need to start your next React.js project. Simp
 This boilerplate features all the latest tools and practices in the industry.
 
 - ⚛ **React** — 16.7.0-alpha.0 with Hooks
+- 🎡 **React Router**: - Router for React Application
 - ♻ **Redux with Redux Thunk** — State Management with middleware to handle async requests
 - 🛠 **Babel** — ES6 syntax, Airbnb & React/Recommended config
 - 🚀 **Webpack**  — Hot Reloading, Code Splitting, Optimized Build
@@ -57,11 +58,11 @@ This boilerplate features all the latest tools and practices in the industry.
 
 - [x] **Lazy load**: Lazy load component;
 - [ ] **Redux Saga**: Support Saga in Redux;
-- [ ] **Localization**: Support localization;
+- [x] **Localization**: Support localization;
 - [x] **Hot Module Replacement**: Better HMR support;
 - [x] **PWA**: Turn into a PWA boilerplate with `workbox-webpack-plugin` and `webpack-pwa-manifest`;
-- [x] **SEO**: SEO-ready;
-s
+- [x] **SEO**: SEO-ready with `React Helmet`;
+
 ## License
 
 MIT license, Copyright (c) 2019.
