@@ -83,7 +83,7 @@
     "Jest"
   ],
   "author": "kominam",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/kominam/react-boilerplate/issues"
   },
@@ -102,5 +102,10 @@
     "reselect": "^4.0.0",
     "seamless-immutable": "^7.1.4",
     "styled-components": "^4.3.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test"
+    }
   }
 }
