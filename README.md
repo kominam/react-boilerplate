@@ -59,9 +59,9 @@ This boilerplate features all the latest tools and practices in the industry.
 - [ ] **Redux Saga**: Support Saga in Redux;
 - [ ] **Localization**: Support localization;
 - [x] **Hot Module Replacement**: Better HMR support;
-- [ ] **PWA**: Turn into a PWA boilerplate;
+- [x] **PWA**: Turn into a PWA boilerplate with `workbox-webpack-plugin` and `webpack-pwa-manifest`;
 - [x] **SEO**: SEO-ready;
-
+s
 ## License
 
 MIT license, Copyright (c) 2019.
