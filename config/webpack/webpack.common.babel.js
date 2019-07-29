@@ -15,7 +15,7 @@ export default {
     alias: {
       '@components': paths.componentFolder,
       '@pages': paths.pageFolder,
-      '@utils': paths.utilFolder,
+      '@utils': paths.utilFolder
     }
   },
   plugins: [

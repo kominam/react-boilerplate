@@ -34,6 +34,7 @@ This boilerplate features all the latest tools and practices in the industry.
 - 💖  **Lint** — ESlint
 - 🔨  **Typed Definition** — Flow
 - 🐶  **Husky** — Prevent bad commits
+- 📚 **Storybook**: Storybook for component virtualization
 
 ## Getting started
 

@@ -7,5 +7,5 @@ const story = storiesOf('Component/App', module);
 
 story.add('default',
   withInfo()(() => (
-    <App name="AppName" description="Minimal React boilerplate for starter" />
+    <App name="React Boilerplate" description="Minimal React boilerplate for starter" />
   )));

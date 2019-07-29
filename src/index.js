@@ -13,16 +13,14 @@ import { translationMessages } from './i18n';
 
 const MOUNT_NODE = document.getElementById('root');
 
-const initialLocale = (navigator.languages && navigator.languages[0]) ||
+const initialLocale =
+  (navigator.languages && navigator.languages[0]) ||
   navigator.language ||
   navigator.userLanguage;
 
-const render = (messages) => {
+const render = messages => {
   ReactDOM.render(
-    <LanguageProvider
-      locale={initialLocale}
-      messages={messages}
-    >
+    <LanguageProvider locale={initialLocale} messages={messages}>
       <Provider store={store}>
         <App />
       </Provider>
@@ -43,17 +41,16 @@ if (module.hot) {
 
 // Chunked polyfill for browsers without Intl support
 if (!window.Intl) {
-  require.ensure([
-    'intl',
-    'intl/locale-data/jsonp/en.js',
-    'intl/locale-data/jsonp/vi.js',
-  ], (require) => {
-    require('intl');
-    require('intl/locale-data/jsonp/en.js');
-    require('intl/locale-data/jsonp/vi.js');
+  require.ensure(
+    ['intl', 'intl/locale-data/jsonp/en.js', 'intl/locale-data/jsonp/vi.js'],
+    require => {
+      require('intl');
+      require('intl/locale-data/jsonp/en.js');
+      require('intl/locale-data/jsonp/vi.js');
 
-    render(translationMessages);
-  });
+      render(translationMessages);
+    }
+  );
 } else {
   render(translationMessages);
 }
