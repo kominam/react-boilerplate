@@ -18,7 +18,5 @@ module.exports = {
     '^.+\\.(js|jsx)$': 'babel-jest'
   },
   verbose: true,
-  setupFilesAfterEnv: [
-    '<rootDir>/config/tests/enzyme.setup.js'
-  ]
+  setupFilesAfterEnv: ['<rootDir>/config/tests/enzyme.setup.js']
 };

@@ -26,7 +26,9 @@ export default {
           handler: 'CacheFirst'
         },
         {
-          urlPattern: new RegExp('^https://fonts.(?:googleapis|gstatic).com/(.*)'),
+          urlPattern: new RegExp(
+            '^https://fonts.(?:googleapis|gstatic).com/(.*)'
+          ),
           handler: 'CacheFirst'
         },
         {
@@ -50,7 +52,9 @@ export default {
         }
       ]
     }),
-    new AddAssetHtmlPlugin({ filepath: require.resolve('../../src/registerServiceWorker.js') }),
+    new AddAssetHtmlPlugin({
+      filepath: require.resolve('../../src/registerServiceWorker.js')
+    })
   ],
   devtool: 'source-map'
 };

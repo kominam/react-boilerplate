@@ -11,13 +11,13 @@ import Helmet from 'react-helmet';
 //
 //   export default withHead(Head)(YourComponentHere)
 
-const withHead = (Head) => (Component) => (props) =>(
+const withHead = Head => Component => props => (
   <>
-  <Helmet>
-    <Head />
-  </Helmet>
-  <Component {...props} />
+    <Helmet>
+      <Head />
+    </Helmet>
+    <Component {...props} />
   </>
-);    
- 
+);
+
 export default withHead;
