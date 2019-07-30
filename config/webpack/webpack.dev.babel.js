@@ -14,9 +14,8 @@ export default {
     hints: 'warning',
     maxAssetSize: 20000000,
     maxEntrypointSize: 8500000,
-    assetFilter: assetFilename => {
-      return assetFilename.endsWith('.css') || assetFilename.endsWith('.js');
-    }
+    assetFilter: assetFilename =>
+      assetFilename.endsWith('.css') || assetFilename.endsWith('.js')
   },
   optimization: {
     splitChunks: {
