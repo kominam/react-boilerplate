@@ -10,7 +10,7 @@
     "lint:fix": "eslint ./src/**/**.js --fix",
     "pretty": "prettier --loglevel warn --write \"*.{js,json}\" \"{src,config,cypress}/**/*.{js,json}\"",
     "test": "jest --config=config/tests/jest.config.js",
-    "test:cover": "jest --coverage",
+    "test:coverage": "yarn test --coverage",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
     "storybook": "start-storybook"
