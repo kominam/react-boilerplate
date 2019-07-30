@@ -15,5 +15,5 @@ export const DEFAULT_LOCALE = 'en';
 
 export const translationMessages = {
   en: enTranslationMessages,
-  vi: viTranslationMessages,
+  vi: viTranslationMessages
 };

@@ -36,7 +36,7 @@ export default {
     })
   ],
   resolve: {
-    extensions: ['.json', '.js', '.jsx', '.tsx'],
+    extensions: ['.json', '.js', '.jsx', '.tsx']
   },
   devtool: 'eval-source-map'
 };
