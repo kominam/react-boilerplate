@@ -87,7 +87,7 @@ resource "aws_cloudfront_distribution" "distribution" {
     }
   }
 
-  aliases = ["${var.domain_name}"]
+  aliases = ["${var.domain_name}.${var.root_domain}"]
 
   restrictions {
     geo_restriction {
@@ -99,6 +99,8 @@ resource "aws_cloudfront_distribution" "distribution" {
     acm_certificate_arn = "${aws_acm_certificate.certificate.arn}"
     ssl_support_method  = "sni-only"
   }
+
+  depends_on= ["null_resource.upload_web_resouce"]
 }
 
 resource "aws_route53_zone" "zone" {
