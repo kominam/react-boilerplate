@@ -34,4 +34,3 @@ resource "aws_dynamodb_table" "terraform_locked_tb" {
     STAGE = "${var.stage}"
   }
 }
-
