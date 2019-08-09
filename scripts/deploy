@@ -10,20 +10,20 @@ then
   echo "Bucket has already setup.Skip creating bucket to store deployment state"
 else
   echo "Creating S3 bucket and DynamoDB table to support storing deployment state ..."
-  terraform init provision/.terraform-state-setup
+  terraform init provision/pre-provision
   terraform apply \
     -var "aws_region=$AWS_DEPLOYMENT_REGION" \
     -var "stage=$STAGE" \
     -var "app=$APP"
-    provision/.terraform-state-setup
+    provision/pre-provision
 fi
 
 terraform init \
   -backend-config "bucket=$DEPLOYMENT_STATE_BUCKET" \
-  -backend-config "dynamo_table=$LOCKING_STATE_TABLE" \ 
+  -backend-config "dynamodb_table=$LOCKING_STATE_TABLE" \ 
   -backend-config "key=$APP.tfState.$STAGE" \
   -backend-config "region=$AWS_DEPLOYMENT_REGION" \
-  provision/.terraform
+  provision/main
 terraform apply \
   -auto-approve \
   -var "aws_region=$AWS_DEPLOYMENT_REGION" \
@@ -31,4 +31,4 @@ terraform apply \
   -var "app=$APP"
   -var "root_domain=$ROOT_DOMAIN" \
   -var "domain_name=$DOMAIN_NAME" \
-  provision/.terraform
+  provision/main
