@@ -1,21 +1,26 @@
-    
 language: node_js
+node_js: '8'
 cache: yarn
-node_js:
-  - "11"
-  - "10"
-  - "8"
-install: yarn
+before_install:
+  - sudo apt-get install awscli -y
+  - curl -sLo /tmp/terraform.zip https://releases.hashicorp.com/terraform/0.12.3/terraform_0.12.3_linux_amd64.zip
+  - unzip /tmp/terraform.zip -d /tmp
+  - mv /tmp/terraform ~/bin
+  - export PATH="~/bin:$PATH"
+install:
+- yarn
 jobs:
   include:
     - stage: lint
       script: yarn lint
-    - stage: test
+    - stage: unit test
       script: yarn test
-    # - stage: deploy
-    #   deploy:
-    #   - provider: script
-    #     skip_cleanup: true
-    #     script: chmod +x ./scripts/deploy && ./scripts/deploy
-    #     on:
-    #       all_branches: true
+    - stage: build
+      script: chmod +x ./scripts/build && ./scripts/build
+    - stage: deploy
+      deploy:
+      - provider: script
+        skip_cleanup: true
+        script: chmod +x ./scripts/deploy && ./scripts/deploy
+        on:
+          all_branches: true

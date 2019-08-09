@@ -61,3 +61,7 @@ typings/
 .next
 
 build
+
+provision/**/.terraform/
+provision/**/terraform.tfstate
+provision/**/terraform.tfstate.backup
