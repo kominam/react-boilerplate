@@ -23,7 +23,8 @@
     "React",
     "Webpack",
     "Jest",
-    "Storybook"
+    "Storybook",
+    "Terraform"
   ],
   "author": "kominam",
   "license": "MIT",

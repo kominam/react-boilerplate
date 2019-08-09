@@ -16,6 +16,13 @@ React Boilerplate
 
 <hr />
 
+## Content
+
+1. [Introduction](#installation)
+2. [Getting Started](#getting-started)
+2. [Commands](#commands)
+3. [Deployment](#deployment)
+
 ## Introduction
 
 This boilerplate contains all you need to start your next React.js project. Simple, robust, well-organized, all you need to do is clone, install and you're ready to start.
@@ -35,25 +42,7 @@ This boilerplate features all the latest tools and practices in the industry.
 - 🔨  **Typed Definition** — Flow
 - 🐶  **Husky** — Prevent bad commits
 - 📚 **Storybook**: Storybook for component virtualization
-
-## Getting started
-
-1. Clone this repo using `https://github.com/kominam/react-boilerplate`
-2. Move to the appropriate directory: `cd react-boilerplate`.<br />
-3. Run `yarn` or `npm install` to install dependencies.<br />
-4. Run `npm start` to see the example app at `http://localhost:8080`.
-
-## Commands
-
-- `npm start` - start the dev server
-- `npm run build` - create a production ready build in `build` folder
-- `npm run lint` - execute an eslint check
-- `npm run lint:fix` - execute an eslint and fix the errors
-- `npm test` - run all tests
-- `npm run test:watch` - run all tests in watch mode
-- `npm run test:cover` - coverage mode
-- `npm run cypress:open` - starts cypress
-- `npm run cypress:run` - run cypress
+- 🕹 **Deployment Automation**: Using Terraform with AWS Provider to deploy static site (S3, Cloudfront, ACM & Route53)
 
 ## Next features:
 
@@ -63,6 +52,39 @@ This boilerplate features all the latest tools and practices in the industry.
 - [x] **Hot Module Replacement**: Better HMR support;
 - [x] **PWA**: Turn into a PWA boilerplate with `workbox-webpack-plugin` and `webpack-pwa-manifest`;
 - [x] **SEO**: SEO-ready with `React Helmet`;
+
+## Getting Started
+
+1. Clone this repo using `https://github.com/kominam/react-boilerplate`
+2. Move to the appropriate directory: `cd react-boilerplate`.<br />
+3. Run `yarn` or `npm install` to install dependencies.<br />
+4. Run `npm start` to see the example app at `http://localhost:8080`
+
+## Commands
+
+- `npm start` - start the dev server
+- `npm run build` - create a production ready build in `build` folder
+- `npm run lint` - execute an eslint check
+- `npm run lint:fix` - execute an eslint and fix the errors
+- `npm test` - run all tests
+- `npm run test:watch` - run all tests in watch mode
+- `npm run test:coverage` - coverage mode
+- `npm run cypress:open` - starts cypress
+- `npm run cypress:run` - run cypress
+- `npm run storybook` - run storybook
+
+## Deployment
+
+We are using these tools for deployment:
+
+- [aws-cli](https://github.com/aws/aws-cli) for interacting with Amazon Web Services.
+- [terraform](https://github.com/hashicorp/terraform) for versioning infrastructure.
+
+So make sure that you have installed and configured them properly.
+
+Using script `scripts/deploy`, syntax:
+
+`scripts/deploy`
 
 ## License
 
