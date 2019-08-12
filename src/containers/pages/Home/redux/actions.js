@@ -1,19 +1,19 @@
 import * as constant from './constant';
 
-export function changeActionName(name) {
+export function changeAppName(name) {
   return {
-    type: constant.ACTION_NAME,
+    type: constant.CHANGE_APP_NAME,
     payload: {
       name
     }
   };
 }
 
-export function changeActionName2(name) {
+export function changeAppDescription(description) {
   return {
-    type: constant.ACTION_NAME_2,
+    type: constant.CHANGE_APP_DESCRIPTION,
     payload: {
-      name
+      description
     }
   };
 }

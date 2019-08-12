@@ -6,12 +6,14 @@ import App from './containers/App';
 
 import LanguageProvider from './containers/LanguageProvider';
 
-import store from './store';
+import configureStore from './store';
 
 // Import i18n messages
 import { translationMessages } from './i18n';
 
 const MOUNT_NODE = document.getElementById('root');
+
+const store = configureStore();
 
 const initialLocale =
   (navigator.languages && navigator.languages[0]) ||
