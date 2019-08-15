@@ -12,12 +12,12 @@ export default function(state = initialState, action) {
   switch (type) {
     case constant.CHANGE_APP_NAME: {
       return Immutable.merge(state, {
-        name: payload.name,
+        name: payload.name
       });
     }
     case constant.CHANGE_APP_DESCRIPTION: {
       return Immutable.merge(state, {
-        description: payload.description,
+        description: payload.description
       });
     }
     default:
