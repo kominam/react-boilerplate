@@ -22,19 +22,19 @@ export default {
         terserOptions: {
           warnings: false,
           compress: {
-            comparisons: false,
+            comparisons: false
           },
           parse: {},
           mangle: true,
           output: {
             comments: false,
-            ascii_only: true,
-          },
+            ascii_only: true
+          }
         },
         parallel: true,
         cache: true,
-        sourceMap: true,
-      }),
+        sourceMap: true
+      })
     ],
     nodeEnv: 'production',
     sideEffects: true,
@@ -49,13 +49,13 @@ export default {
           test: /[\\/]node_modules[\\/]/,
           name(module) {
             const packageName = module.context.match(
-              /[\\/]node_modules[\\/](.*?)([\\/]|$)/,
+              /[\\/]node_modules[\\/](.*?)([\\/]|$)/
             )[1];
-            return `npm.${packageName.replace('@', '')}`;
-          },
-        },
-      },
-    },
+            return `${paths.jsFolder}/npm.${packageName.replace('@', '')}`;
+          }
+        }
+      }
+    }
   },
   plugins: [
     new CleanWebpackPlugin(),
@@ -83,7 +83,7 @@ export default {
     }),
     new WebpackPwaManifest({
       name: 'React Boilerplate',
-      short_name: 'React Boil',
+      short_name: 'React Boiler',
       description: 'Minimal React Boilerplate for starter',
       background_color: '#ffffff',
       orientation: 'portrait',
@@ -97,14 +97,14 @@ export default {
       ]
     }),
     new AddAssetHtmlPlugin({
-      filepath: require.resolve('../../src/registerServiceWorker.js')
+      filepath: `${paths.root}/src/registerServiceWorker.js`
     }),
     new CompressionPlugin({
       algorithm: 'gzip',
-      test: /\.js$|\.css$|\.html$/,
+      test: /\.(js|css|html)$/,
       threshold: 10240,
-      minRatio: 0.8,
-    }),
+      minRatio: 0.8
+    })
   ],
   devtool: 'source-map'
 };
