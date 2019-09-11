@@ -1,28 +1,33 @@
 // @flow
 import React from 'react';
+import hoistNonReactStatics from 'hoist-non-react-statics';
 import { ReactReduxContext } from 'react-redux';
 
 const withReducer = (key, reducer) => WrappedComponent => {
-  const Extended = (props, context) => {
-    const { store } = context;
+  class ReducerInjector extends React.Component {
+    static contextType = ReactReduxContext;
 
-    store.injectReducer(key, reducer);
+    static WrappedComponent = WrappedComponent;
 
-    // Now just give back the original component as-is.
-    return <WrappedComponent {...props} />;
-  };
+    constructor(props, context) {
+      super(props, context);
 
-  // To use context, you must define contextTypes
-  // https://reactjs.org/docs/context.html
-  Extended.contextTypes = {
-    store: Object
-  };
+      // register reducer on-the-fly
+      const { context: { store } } = this;
+      store.injectReducer(key, reducer);
+    }
 
-  return Extended;
+    render() {
+      return <WrappedComponent {...this.props} />;
+    }
+  }
+
+  return hoistNonReactStatics(ReducerInjector, WrappedComponent);
 };
 
-const useInjectReducer = ({ key, reducer }) => {
+const useInjectReducer = (key, reducer) => {
   const context = React.useContext(ReactReduxContext);
+
   React.useEffect(() => {
     context.store.injectReducer(key, reducer);
   }, []);
