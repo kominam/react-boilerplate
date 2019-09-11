@@ -37,7 +37,8 @@
         "allowTaggedTemplates": true
       }
     ],
-    "no-underscore-dangle": ["error", { "allow": ["__REDUX_DEVTOOLS_EXTENSION_COMPOSE__"] }]
+    "no-underscore-dangle": ["error", { "allow": ["__REDUX_DEVTOOLS_EXTENSION_COMPOSE__"] }],
+    "prettier/prettier": "error"
   },
   "settings": {
     "import/resolver": "webpack"

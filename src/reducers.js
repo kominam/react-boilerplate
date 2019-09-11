@@ -7,7 +7,7 @@ import homeReducer from './containers/pages/Home/redux/reducers';
 export default function createReducer(injectedReducers = {}) {
   const rootReducer = combineReducers({
     home: homeReducer,
-    ...injectedReducers,
+    ...injectedReducers
   });
 
   return rootReducer;

@@ -14,13 +14,13 @@ const configureStore = () => {
   const store = createStore(createReducer(), reduxDevTools(middleware));
 
   // Create an object to store on-the-fly reducer registration
-  store.injectedReducers  = {};
+  store.injectedReducers = {};
 
   // delegate ultilized function for `injectReducer`
   store.injectReducer = (key, reducer) => {
     invariant(
       isString(key) && !isEmpty(key) && isFunction(reducer),
-      '(src/utils...) injectReducer: Expected `reducer` to be a reducer function',
+      '(src/utils...) injectReducer: Expected `reducer` to be a reducer function'
     );
 
     // Check `store.injectedReducers[key] === reducer` for hot reloading when a key is the same but a reducer is different
@@ -30,12 +30,11 @@ const configureStore = () => {
     )
       return;
 
-    store.injectedReducers [key] = reducer;
-    store.replaceReducer(createReducer(store.injectedReducers ));
+    store.injectedReducers[key] = reducer;
+    store.replaceReducer(createReducer(store.injectedReducers));
   };
 
   return store;
-
 };
 
 export default configureStore;

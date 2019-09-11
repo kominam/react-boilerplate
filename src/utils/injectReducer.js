@@ -13,7 +13,9 @@ const withReducer = (key, reducer) => WrappedComponent => {
       super(props, context);
 
       // register reducer on-the-fly
-      const { context: { store } } = this;
+      const {
+        context: { store }
+      } = this;
       store.injectReducer(key, reducer);
     }
 
