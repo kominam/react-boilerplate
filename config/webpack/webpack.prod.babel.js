@@ -1,8 +1,10 @@
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
+import CompressionPlugin from 'compression-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { GenerateSW } from 'workbox-webpack-plugin';
 import WebpackPwaManifest from 'webpack-pwa-manifest';
 import AddAssetHtmlPlugin from 'add-asset-html-webpack-plugin';
+import TerserPlugin from 'terser-webpack-plugin';
 
 import paths from './paths';
 
@@ -12,6 +14,48 @@ export default {
     filename: `${paths.jsFolder}/[name].[hash].js`,
     path: paths.outputPath,
     chunkFilename: '[name].[chunkhash].js'
+  },
+  optimization: {
+    minimize: true,
+    minimizer: [
+      new TerserPlugin({
+        terserOptions: {
+          warnings: false,
+          compress: {
+            comparisons: false
+          },
+          parse: {},
+          mangle: true,
+          output: {
+            comments: false,
+            ascii_only: true
+          }
+        },
+        parallel: true,
+        cache: true,
+        sourceMap: true
+      })
+    ],
+    nodeEnv: 'production',
+    sideEffects: true,
+    concatenateModules: true,
+    runtimeChunk: 'single',
+    splitChunks: {
+      chunks: 'all',
+      maxInitialRequests: 10,
+      minSize: 0,
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name(module) {
+            const packageName = module.context.match(
+              /[\\/]node_modules[\\/](.*?)([\\/]|$)/
+            )[1];
+            return `${paths.jsFolder}/npm.${packageName.replace('@', '')}`;
+          }
+        }
+      }
+    }
   },
   plugins: [
     new CleanWebpackPlugin(),
@@ -39,7 +83,7 @@ export default {
     }),
     new WebpackPwaManifest({
       name: 'React Boilerplate',
-      short_name: 'React Boil',
+      short_name: 'React Boiler',
       description: 'Minimal React Boilerplate for starter',
       background_color: '#ffffff',
       orientation: 'portrait',
@@ -53,7 +97,13 @@ export default {
       ]
     }),
     new AddAssetHtmlPlugin({
-      filepath: require.resolve('../../src/registerServiceWorker.js')
+      filepath: `${paths.root}/src/registerServiceWorker.js`
+    }),
+    new CompressionPlugin({
+      algorithm: 'gzip',
+      test: /\.(js|css|html)$/,
+      threshold: 10240,
+      minRatio: 0.8
     })
   ],
   devtool: 'source-map'
